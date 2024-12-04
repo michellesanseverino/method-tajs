@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --runInBand test/",
+    "test:dev": "NODE_OPTIONS=--experimental-vm-modules npx jest --runInBand --watchAll test/",
+    "test:debug": "node --experimental-vm-modules --inspect-brk node_modules/.bin/jest --runInBand --watchAll test/"
   },
   "keywords": [],
   "author": "michellesanseverino",
@@ -14,6 +16,10 @@
     "node": "v20.17.0"
   },
   "devDependencies": {
+    "@types/node": "^22.10.1",
     "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "node": "^22.12.0"
   }
 }
